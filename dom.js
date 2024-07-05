@@ -20,3 +20,13 @@ function changeColor()
     const coloring=document.getElementById('color');
     coloring.style.color="green";
 }
+function changeAttributes()
+{
+    const att=document.getElementById('myDiv');
+    att.setAttribute('data-custom','hello');
+}
+function printAttribute() {
+    const att = document.getElementById('myDiv');
+    const attributeValue = att.getAttribute('data-custom');
+    document.getElementById('output').textContent = attributeValue;
+}

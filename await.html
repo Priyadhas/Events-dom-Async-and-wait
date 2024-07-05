@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async and Await</title>
+</head>
+<body>
+    <h1>Async and Await</h1>
+    <h1>The numbers are 2345 and 43478</h1>
+    <button id="addd">Click to add</button>
+    <div id="num"></div>
+    <script>
+        async function adding() {
+            try {
+                let sum = await new Promise((resolve) => {
+                    let a = 2345, b = 43478;
+                    resolve(a + b);
+                });
+                displayData(sum);
+            } catch (error) {
+                console.log('Error fetching data:', error);
+            }
+        }
+
+        function displayData(data) {
+            const dataIn = document.getElementById('num');
+            dataIn.innerHTML = 'The result is: ' + data;
+        }
+
+        document.getElementById('addd').addEventListener('click', adding);
+    </script>
+</body>
+</html>
